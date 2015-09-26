@@ -55,7 +55,7 @@ The *loadToothData* function was used to load the data.  This function was first
   
 The *loadToothData* function was then passed to the *exploreBox* function to create the boxplot below.
 
-![](ToothDecayAnalysis_files/figure-html/unnamed-chunk-2-1.png) 
+![Figure 1](fig1.png) 
   
 From this initial look at the data, three questions emerge to guide further exploration:
 
