@@ -1,0 +1,9 @@
+# r markdown latex dir
+tex2*/
+*.jpg
+_*
+*.RData
+*.RHistory
+ToothDecayAnalysis_files/
+temp.R
+ToothDecayAnalysis.html
