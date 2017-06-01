@@ -146,8 +146,8 @@ To answer the first two questions, the null hypothesis was defined as H0: Mean A
 
 ### Conclusions
 1. With no multiple testing correction, controling only the FPR, we would reject H0 in favor of Ha for all tests except **t7**.
-2. Controlling FDR using a BH yielded the same result as only controlling FPR.
-3. If we control FWER using a Bonferroni correction, we would reject H0 in favor of Ha for all tests except **t7 and t2**.
+2. Controlling *False Discovery Rate* (FDR) using a *Benjamini Hochberg* (BH) yielded the same result as only controlling *False Positive Rate* (FPR).
+3. If we control Family-wise Error Rate (FWER) using a Bonferroni correction, we would reject H0 in favor of Ha for all tests except **t7 and t2**.
 4. Based on 1. and 2., the evidence of the data supports the hypothesis that an increased mean tooth length will be observed with increased dosage with both delivery methods under a Type I error rate alpha of 0.05.  If we accept the more conservative Bonferroni correction, we would accept H0 for the 1.0 to 2.0 doses for the orange juice delivery test (test 2).
 5. Also based on 1., 2. and 3., the evidence of the data supports the hypothesis that an increased mean tooth length will be observed using the orange juice deliver method for the 0.5 and 1.0 mg dose levels but not for the 2.0 dose level under a Type I error rate alpha of 0.05
 
