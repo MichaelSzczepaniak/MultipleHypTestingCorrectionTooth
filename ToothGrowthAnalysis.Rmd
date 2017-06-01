@@ -151,7 +151,7 @@ getPvalue <- function(test.data, testDose = TRUE) {
 
 ## Returns a data frame with the p_values passed in as the p_values column
 ## and the rejectH0 column of boolean values designating whether the
-## P-value was rejected (TRUE) or not (FALSE) under a Type II error rate
+## P-value was rejected (TRUE) or not (FALSE) under a Type I error rate
 ## alpha.
 rejectBonferroni <- function(p_vals, alpha) {
     alpha.fwer <- alpha / length(p_vals)
@@ -167,7 +167,7 @@ rejectBonferroni <- function(p_vals, alpha) {
 ## p.vals - passed in p_values in their original order
 ## alpha.bh.adj - BH adjusted alpha used to reject or accept H0
 ## rejectH0 - boolean values designating whether the P-value was rejected
-##            (TRUE) or not (FALSE) under Type II error rate alpha.
+##            (TRUE) or not (FALSE) under Type I error rate alpha.
 rejectBenjHoch <- function(p_values, alpha) {
     suppressMessages(suppressWarnings(library(dplyr)))
     library(dplyr)
@@ -241,8 +241,8 @@ The **reject_FWER** reports the results for controlling the Family-wise Error Ra
 1. With no multiple testing correction, controling only the FPR, we would reject $H_{0}$ in favor of $H_{a}$ for all tests except **t7**.
 2. Controlling FDR using a BH yielded the same result as only controlling FPR.
 3. If we control FWER using a Bonferroni correction, we would reject $H_{0}$ in favor of $H_{a}$ for all tests except **t7 and t2**.
-4. Based on 1. and 2., the evidence of the data supports the hypothesis that an increased mean tooth length will be observed with increased dosage with both delivery methods under a Type II error rate $\alpha$ of 0.05.  If we accept the more conservative Bonferroni correction, we would accept $H_{0}$ for the 1.0 to 2.0 doses for the orange juice delivery test (test 2).
-5. Also based on 1., 2. and 3., the evidence of the data supports the hypothesis that an increased mean tooth length will be observed using the orange juice deliver method for the 0.5 and 1.0 mg dose levels but not for the 2.0 dose level under a Type II error rate $\alpha$ of 0.05
+4. Based on 1. and 2., the evidence of the data supports the hypothesis that an increased mean tooth length will be observed with increased dosage with both delivery methods under a Type I error rate $\alpha$ of 0.05.  If we accept the more conservative Bonferroni correction, we would accept $H_{0}$ for the 1.0 to 2.0 doses for the orange juice delivery test (test 2).
+5. Also based on 1., 2. and 3., the evidence of the data supports the hypothesis that an increased mean tooth length will be observed using the orange juice deliver method for the 0.5 and 1.0 mg dose levels but not for the 2.0 dose level under a Type I error rate $\alpha$ of 0.05
 
 \newpage
 
@@ -339,7 +339,7 @@ getPvalue <- function(test.data, testDose = TRUE) {
 
 ## Returns a data frame with the p_vals vector passed in as the p_values
 ## column and the rejectH0 column of boolean values designating whether the
-## P-value was rejected (TRUE) or not (FALSE) under a Type II error rate
+## P-value was rejected (TRUE) or not (FALSE) under a Type I error rate
 ## alpha.
 rejectBonferroni <- function(p_vals, alpha) {
     alpha.fwer <- alpha / length(p_vals)
@@ -355,7 +355,7 @@ rejectBonferroni <- function(p_vals, alpha) {
 ## p.vals - passed in p_values in their original order
 ## alpha.bh.adj - BH adjusted alpha used to reject or accept H0
 ## rejectH0 - boolean values designating whether the P-value was rejected
-##            (TRUE) or not (FALSE) under Type II error rate alpha.
+##            (TRUE) or not (FALSE) under Type I error rate alpha.
 rejectBenjHoch <- function(p_values, alpha) {
     suppressMessages(suppressWarnings(library(dplyr)))
     library(dplyr)

@@ -136,11 +136,7 @@ To answer the first two questions, the null hypothesis was defined as H0: Mean A
 </tr>
 </tbody>
 </table>
-  
-## Hypothesis Testing Result
-  
-TBD
-  
+    
 ## Assumptions & Conclusions
 
 ### Assumptions  
@@ -150,11 +146,11 @@ TBD
 4. The effects of dosage and delivery method on tooth length are independent.
 
 ### Conclusions
-1. Under False Positive Rate (FPR) control only with alpha = 0.05, we reject H0 in favor of Ha for all tests except **t7**.
-2. Under Family-wise Error Rate (FWER) control using Bonferroni correction, TBD
-3. Under False Discovery Rate (FDR) control using Benjamini Hochberg (BH), TBD
-4. Based on ???, the evidence of the data supports the hypothesis that an increased mean tooth length will be observed with increased dosage with both delivery methods under TBD
-3. Based on ???, the evidence of the data supports the hypothesis that an increased mean tooth length will be observed using the orange juice deliver method for the 0.5 and 1.0 mg dose levels under TBD
+1. With no multiple testing correction, controling only the FPR, we would reject H0 in favor of Ha for all tests except **t7**.
+2. Controlling FDR using a BH yielded the same result as only controlling FPR.
+3. If we control FWER using a Bonferroni correction, we would reject H0 in favor of Ha for all tests except **t7 and t2**.
+4. Based on 1. and 2., the evidence of the data supports the hypothesis that an increased mean tooth length will be observed with increased dosage with both delivery methods under a Type I error rate alpha of 0.05.  If we accept the more conservative Bonferroni correction, we would accept H0 for the 1.0 to 2.0 doses for the orange juice delivery test (test 2).
+5. Also based on 1., 2. and 3., the evidence of the data supports the hypothesis that an increased mean tooth length will be observed using the orange juice deliver method for the 0.5 and 1.0 mg dose levels but not for the 2.0 dose level under a Type I error rate alpha of 0.05
 
 ## Code Used for the Analysis
 
