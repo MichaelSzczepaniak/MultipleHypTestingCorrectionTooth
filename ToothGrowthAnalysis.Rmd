@@ -1,7 +1,7 @@
 ---
 title: "Tooth Growth Analysis"
 author: "Michael Szczepaniak"
-date: "September 2015"
+date: "May 31, 2017 (latest revision)"
 output:
   pdf_document:
     fig_height: 3
@@ -12,7 +12,7 @@ output:
 
 ## Synopsis
 
-This report explores the relationship between the length of teeth in 10 guinea pigs to three Vitimin C dosages and two delivery methods using the R ToothGrowth data set.  The data provided evidence that an increased mean tooth length was observed with increased dosage with both delivery methods under a Type II error rate $\alpha$ of 0.05.  The data also provided evidence that an increased mean tooth length was observed with the orange juice deliver method for the 0.5 and 1.0 mg doses under a Type II error rate $\alpha$ of 0.05.
+This report explores the relationship between the length of teeth in 10 guinea pigs to three Vitimin C dosages and two delivery methods using the R ToothGrowth data set.  The data provided evidence that an increased mean tooth length was observed with increased dosage with both delivery methods under a Type I error rate $\alpha$ = 0.05.  The data also provided evidence that an increased mean tooth length was observed with the orange juice deliver method for the 0.5 and 1.0 mg doses under a Type I error rate $\alpha$ = 0.05.
 
 ## Loading Data & Exploratory Data Analysis
 Note: All code used for the report are contained the **Code Used for the Analysis** section.
@@ -227,7 +227,7 @@ The first column is the test number. Test 1 corresponds to **t1**, 2 to **t2**, 
 
 The **reject_FPR** column makes no multiple testing corrections and only controls the False Positive Rate (FPR).  The last two columns of the above results apply multiple testing corrections to two groups.  The groupings were defined by which question the test was attempting to address.  The first group was constructed from the results of tests 1-4.  The second group was constructed from the results of tests 5-7.
 
-The **reject_FWER** reports the results for controlling the Family-wide Error Rate (FWER) by applying a Bonferroni correction to tests 1-4 (m = 4), and to tests 5-7 (m = 3).  The **reject_FDR** reports the results for controlling the False Detection Rate (FDR) by applying a Benjamini Hochberg (BH) correction to the two groups previously described.
+The **reject_FWER** reports the results for controlling the Family-wise Error Rate (FWER) by applying a Bonferroni correction to tests 1-4 (m = 4), and to tests 5-7 (m = 3).  The **reject_FDR** reports the results for controlling the False Detection Rate (FDR) by applying a Benjamini Hochberg (BH) correction to the two groups previously described.
 
 ## Assumptions & Conclusions
 
@@ -240,7 +240,7 @@ The **reject_FWER** reports the results for controlling the Family-wide Error Ra
 ### Conclusions
 1. With no multiple testing correction, controling only the FPR, we would reject $H_{0}$ in favor of $H_{a}$ for all tests except **t7**.
 2. Controlling FDR using a BH yielded the same result as only controlling FPR.
-3. If we control FWER using a Bonferroni correction, we would reject we would reject $H_{0}$ in favor of $H_{a}$ for all tests except **t7 and t2**.
+3. If we control FWER using a Bonferroni correction, we would reject $H_{0}$ in favor of $H_{a}$ for all tests except **t7 and t2**.
 4. Based on 1. and 2., the evidence of the data supports the hypothesis that an increased mean tooth length will be observed with increased dosage with both delivery methods under a Type II error rate $\alpha$ of 0.05.  If we accept the more conservative Bonferroni correction, we would accept $H_{0}$ for the 1.0 to 2.0 doses for the orange juice delivery test (test 2).
 5. Also based on 1., 2. and 3., the evidence of the data supports the hypothesis that an increased mean tooth length will be observed using the orange juice deliver method for the 0.5 and 1.0 mg dose levels but not for the 2.0 dose level under a Type II error rate $\alpha$ of 0.05
 
@@ -337,8 +337,8 @@ getPvalue <- function(test.data, testDose = TRUE) {
     return(pval)
 }
 
-## Returns a data frame with the p_values passed in as the p_values column
-## and the rejectH0 column of boolean values designating whether the
+## Returns a data frame with the p_vals vector passed in as the p_values
+## column and the rejectH0 column of boolean values designating whether the
 ## P-value was rejected (TRUE) or not (FALSE) under a Type II error rate
 ## alpha.
 rejectBonferroni <- function(p_vals, alpha) {
