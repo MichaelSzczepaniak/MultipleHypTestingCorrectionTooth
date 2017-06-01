@@ -6,7 +6,7 @@ Michael Szczepaniak
 This report explores the relationship between the length of teeth in 10 guinea pigs to three Vitimin C dosages and two delivery methods using the R ToothGrowth data set.  The data provided evidence that an increased mean tooth length was observed with increased dosage with both delivery methods under a Type I error rate alpha = 0.05.  The data also provided evidence that an increased mean tooth length was observed with the orange juice deliver method for the 0.5 and 1.0 mg doses under a Type I error rate alpha = 0.05.
 
 ## Loading Data & Exploratory Data Analysis
-Note: All code used for the report are contained the **Code Used for the Analysis** section.
+Note: All code used for the report are contained the **Code Used for the Analysis** section of the pdf report.
 
 The *loadToothData* function was used to load the data.  This function was first passed to the *getToothSummary* to create the following summary table.  The **Group** variable concatinates the **Delivery** and **Dose** variables.
   
