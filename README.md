@@ -1,6 +1,5 @@
 # Tooth Growth Analysis
 Michael Szczepaniak  
-September 2015  
 
 ## Synopsis
 
