@@ -20,16 +20,20 @@ Note: All code used for the report are contained the **Code Used for the Analysi
 The *loadToothData* function was used to load the data.  The data was then passed to the function *getToothSummary* to create the following summary table.  The **Group** variable concatinates the **Delivery** and **Dose** variables.
 
 ```{r echo=FALSE}
+## Loads the ToothGrowth data set, renames the columns to something clearer,
+## groups the data by delivery method and dose, converts grouping and dose to
+## factors and then returns the modified df.
 loadToothData <- function() {
     suppressMessages(suppressWarnings(require(dplyr)))
     library(datasets)
     library(dplyr)
-    data("ToothGrowth")
-    # rename variables/columns to make them clearer
+    data("ToothGrowth")  # loads a Promise for ToothGrowth data into workspace
+    # a little data cleanup here: rename variables/columns to make them clearer
     tooth.data <- rename(ToothGrowth, Length=len, Delivery=supp, Dose=dose)
-    # add group id
+    # create groupings as combinations of Delivery and Dose
     tooth.data <- mutate(tooth.data,
                          Group=factor(paste0(Delivery, sprintf("%.1f", Dose))))
+    # Dose is numeric, but we use it as a factor, convert is accordingly
     tooth.data <- mutate(tooth.data,  Dose = factor(Dose))
     return(tooth.data)
 }
